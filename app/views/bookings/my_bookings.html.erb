@@ -1,0 +1,9 @@
+<h1>My bookings</h1>
+<p><%= Booking.all %></p>
+<% if false %>
+<ul>
+  <% @booking.each do |book| %>
+    <li><%= link_to booking.name, my_booking(booking) %></li>
+  <% end %>
+</ul>
+<% end %>
