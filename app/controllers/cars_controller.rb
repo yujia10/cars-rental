@@ -28,6 +28,11 @@ class CarsController < ApplicationController
     redirect_to cars_path
   end
 
+  def my_cars
+    @cars = current_user.cars
+  end
+
+
   private
 
   def list_params
