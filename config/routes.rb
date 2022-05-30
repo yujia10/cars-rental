@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :bookings, only: [:new,:create]
+    collection do
+      get :my_cars
+    end
   end
 
   resources :bookings, only: [:update, :destroy] do
