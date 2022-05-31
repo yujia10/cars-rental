@@ -38,12 +38,12 @@ car2.save!
 Booking.destroy_all
 
 bookin1 = Booking.new(start_date: s_date1, end_date: e_date1, total_price: 250)
-bookin1.car = car3
+bookin1.car = car2
 bookin1.user = yaron2
 bookin1.save!
 
 
 bookin2 = Booking.new(start_date: s_date2, end_date: e_date2, total_price: 150)
-bookin2.car = car2
+bookin2.car = car3
 bookin2.user = yujia
 bookin2.save!

@@ -17,8 +17,8 @@ class CarsController < ApplicationController
   end
 
   def create
-    authorize @car
     @car = Car.new(list_params)
+    authorize @car
     @car.user = current_user
     if @car.save
       redirect_to car_path(@car), notice: 'You are successful'
@@ -28,14 +28,15 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    authorize @car
     @car = Car.find(params[:id])
+    authorize @car
     @car.destroy
     redirect_to cars_path
   end
 
   def my_cars
     @cars = current_user.cars
+    authorize @cars
   end
 
 

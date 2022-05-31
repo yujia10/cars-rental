@@ -1,13 +1,9 @@
-class CarPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
       scope.all
     end
-  end
-
-  def show?
-    return true
   end
 
   def create?
@@ -18,16 +14,12 @@ class CarPolicy < ApplicationPolicy
     return true
   end
 
-  def update?
-    record.user == user
+  def my_bookings?
+    return true
   end
 
-  def destroy?
-    record.user == user
-  end
-
-  def my_cars?
-    true
+  def car_bookings?
+    return true
   end
 
 end
