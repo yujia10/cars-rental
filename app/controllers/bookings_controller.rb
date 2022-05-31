@@ -6,15 +6,21 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @car = Car.find(params[:car_id])
+    authorize @booking
   end
 
   def create
     @car = Car.find(params[:car_id])
     @booking = Booking.new(list_params)
-    @booking.car =  @car
-    @booking.user = current_user
-    if @booking.save
-      redirect_to car_path(@car), notice: 'You are successful'
+    authorize @booking
+    if @booking.start_date <  @booking.end_date
+      @booking.car =  @car
+      @booking.user = current_user
+      if @booking.save
+        redirect_to my_bookings_bookings_path, notice: 'You are successful'
+      else
+        render :new
+      end
     else
       render :new
     end
@@ -23,9 +29,20 @@ class BookingsController < ApplicationController
   def car_bookings
      @bookings = policy_scope(Booking).where(car: current_user.cars)
   end
-
   def my_bookings
      @bookings = policy_scope(Booking).where(user: current_user)
+
+    
+# Yaron code   
+#     @bookings = current_user.car_bookings
+#     authorize @bookings
+#   end
+
+#   def my_bookings
+#     @booking = current_user.my_bookings
+#     authorize @booking
+
+    
   end
 
   private

@@ -1,7 +1,15 @@
-<h1>My bookings</h1>
+<div class="container">
+  <h1>My bookings</h1>
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= link_to booking.user.email, '#' %></li>
-  <% end %>
-</ul>
+  <ul class="card">
+    <% @booking.each do |booking| %>
+      <li> *********************************** </li>
+      <li>Start Date: <%= booking.start_date %> </li>
+      <li>End Date: <%= booking.end_date %> </li>
+      <li>Total Price: <%= booking.total_price %> </li>
+      <li>Booked car:<%= booking.car.make %> </li>
+      <li> *********************************** </li>
+    <% end %>
+  </ul>
+</div>
+

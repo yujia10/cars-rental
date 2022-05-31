@@ -1,8 +1,13 @@
-<h1>Car bookings</h1>
-<% if false %>
+<%= link_to 'Back to my cars', my_cars_cars_path %>
 <ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+  <% @bookings.each do |booking| %>
+    <% car = Car.find(booking.car_id) %>
+    <% user = User.find(booking.user_id) %>
+    <li><%= car.make %> | <%= car.model %> | $<%= car.price_day %>/day</li>
+    <li>Booked by: <%= user.email %></li>
+    <li>Start date: <%= booking.start_date %></li>
+    <li>End date: <%= booking.end_date %></li>
+    <li>Total price: <%= booking.total_price %></li>
   <% end %>
 </ul>
-<% end %>
+

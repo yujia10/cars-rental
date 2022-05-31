@@ -5,4 +5,21 @@ class BookingPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+#   def create?
+#     return true
+#   end
+
+#   def new?
+#     return true
+#   end
+
+#   def my_bookings?
+#     return true
+#   end
+
+#   def car_bookings?
+#     return true
+#   end
+
 end
