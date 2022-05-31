@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
 
+  skip_after_action :verify_authorized, only: [:index, :car_bookings, :my_bookings]
+  after_action :verify_policy_scoped, only: [:index, :car_bookings, :my_bookings]
+
   def new
     @booking = Booking.new
     @car = Car.find(params[:car_id])
@@ -24,13 +27,22 @@ class BookingsController < ApplicationController
   end
 
   def car_bookings
-    @bookings = current_user.car_bookings
-    authorize @bookings
+     @bookings = policy_scope(Booking).where(car: current_user.cars)
   end
-
   def my_bookings
-    @booking = current_user.my_bookings
-    authorize @booking
+     @bookings = policy_scope(Booking).where(user: current_user)
+
+    
+# Yaron code   
+#     @bookings = current_user.car_bookings
+#     authorize @bookings
+#   end
+
+#   def my_bookings
+#     @booking = current_user.my_bookings
+#     authorize @booking
+
+    
   end
 
   private
