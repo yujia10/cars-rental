@@ -1,12 +1,17 @@
-.navbar-lewagon {
+.navbar-cars {
   justify-content: space-between;
-  background: white;
+  background: #293462;
+  color: #F5EFEF
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-cars .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-cars .navbar-brand img {
   width: 40px;
+}
+.main-button {
+  background-color: #F55353;
+  color: #F5EFEF;
 }
