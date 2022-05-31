@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @booking = current_user.my_bookings
+    @bookings = current_user.my_bookings
   end
 
   private
