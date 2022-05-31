@@ -1,1 +1,7 @@
-<h1>Edit Your Car</h1>
+<h2>Edit Your Car</h2>
+<%= simple_form_for @car do |f| %>
+  <%= f.input :make %>
+  <%= f.input :model %>
+  <%= f.input :price_day %>
+  <%= f.submit %>
+<% end %>

@@ -1,8 +1,13 @@
-<h1>My Cars</h1>
-<p></p>
 
-<ul>
-  <% @cars.each do |car| %>
-    <li><%= link_to car.make, car_path(car) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Browse My cars</h1>
+  <p>You are only one step away to rent a car</p>
+
+  <div>
+    <% @cars.each do |car| %>
+      <%= render 'car', car: car %>
+    <% end %>
+  </div>
+
+  <%# link_to('Edit', edit_car_path(car)) if policy(car).update? %>
+</div>
