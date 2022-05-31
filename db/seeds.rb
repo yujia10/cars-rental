@@ -15,27 +15,25 @@ e_date2 = Date.new(2022,6,2)
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Car.destroy_all
-Booking.destroy_all
 
-yaron = User.create!(email: "yaron.kr@test.com", password: "secret")
-yujia = User.create!(email: "yujia@test.com", password: "secret")
-julienC = User.create!(email: "julienC@test.com", password: "secret")
-julienV = User.create!(email: "julienV@test.com", password: "secret")
+yaron2 = User.create!(email: "yaron.kr@test.com", password: "yaron123")
+yujia = User.create!(email: "yujia@test.com", password: "yujia123")
+julienC = User.create!(email: "julienC@test.com", password: "julienC")
+julienV = User.create!(email: "julienV@test.com", password: "julienV")
 
 car3 = Car.new(make: "Mitsubishi", model: "2022", price_day: 175)
-car3.user = yaron
+car3.user = yaron2
 car3.save!
 
 car2 = Car.new(make: "Golf", model: "2020", price_day: 75)
 car2.user = yujia
 car2.save!
 
-# Booking.destroy_all
+Booking.destroy_all
 
 bookin1 = Booking.new(start_date: s_date1, end_date: e_date1, total_price: 250)
 bookin1.car = car3
-bookin1.user = yaron
+bookin1.user = yaron2
 bookin1.save!
 
 
