@@ -3,17 +3,21 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    @cars = policy_scope(Car).order(created_at: :desc)
   end
 
   def show
     @car = Car.find(params[:id])
+    authorize @car
   end
 
   def new
     @car = Car.new
+    authorize @car
   end
 
   def create
+    authorize @car
     @car = Car.new(list_params)
     @car.user = current_user
     if @car.save
@@ -24,6 +28,7 @@ class CarsController < ApplicationController
   end
 
   def destroy
+    authorize @car
     @car = Car.find(params[:id])
     @car.destroy
     redirect_to cars_path
