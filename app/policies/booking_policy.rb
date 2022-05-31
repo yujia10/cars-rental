@@ -21,4 +21,5 @@ class BookingPolicy < ApplicationPolicy
   def car_bookings?
     return true
   end
+
 end

@@ -26,4 +26,8 @@ class CarPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def my_cars?
+    true
+  end
+
 end
