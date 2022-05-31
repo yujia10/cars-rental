@@ -68,3 +68,6 @@ gem 'devise'
 
 
 gem 'pundit'
+
+# gem to add dates when creating booking
+gem 'flatpickr'
