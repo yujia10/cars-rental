@@ -31,9 +31,9 @@ class BookingsController < ApplicationController
   end
   def my_bookings
      @bookings = policy_scope(Booking).where(user: current_user)
+  end
 
-    
-# Yaron code   
+# Yaron code
 #     @bookings = current_user.car_bookings
 #     authorize @bookings
 #   end
@@ -42,8 +42,6 @@ class BookingsController < ApplicationController
 #     @booking = current_user.my_bookings
 #     authorize @booking
 
-    
-  end
 
   private
 
