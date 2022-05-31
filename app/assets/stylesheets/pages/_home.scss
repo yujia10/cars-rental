@@ -1,1 +1,68 @@
 // Specific CSS for your home-page
+body {
+  margin: 0;
+  font-family: Open Sans;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* banner */
+.banner {
+  background-image: url("../../images/background.png");
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+}
+
+.banner-container {
+  width: 900px;
+  margin: auto;
+  color: white;
+}
+
+.banner p {
+  color: rgb(146, 143, 143);
+  opacity: 0.7;
+  font-size: 20px;
+}
+
+.btn-large {
+  display: inline-block;
+  color: white;
+  background-color: #1EDD88;
+  padding: 16px 35px;
+  border-radius: 40px;
+}
+
+
+/* card */
+.body-container {
+  width: 900px;
+  margin: auto;
+  color: black;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.card-white {
+  box-shadow: 10px 10px 8px #888888;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230 230 230);
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230 230 230);
+}
+.card-white img {
+  height: 100px;
+}
+.card-white p{
+  color: rgb(146, 143, 143);
+}
