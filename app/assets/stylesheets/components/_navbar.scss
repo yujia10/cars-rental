@@ -6,6 +6,10 @@
 
 .navbar-cars .navbar-collapse {
   flex-grow: 0;
+  li {
+    padding: 0;
+    margin: 0 8px;
+  }
 }
 
 .navbar-cars .navbar-brand img {
@@ -14,4 +18,19 @@
 .main-button {
   background-color: #F55353;
   color: #F5EFEF;
+  font-size: 18px;
+  border: none;
+  padding: 5px 10px;
+  margin: 4px 10px 0;
+  border-radius: 5px;
+  &:hover {
+    background-color: #ed7373;
+  }
+}
+.text-white {
+  color: #F5EFEF;
+  font-size: 18px;
+  &:hover {
+    border-bottom: 2px solid #F5EFEF;
+  }
 }
