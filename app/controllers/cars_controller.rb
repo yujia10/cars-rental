@@ -21,6 +21,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(list_params)
+    authorize @car
     @car.user = current_user
     if @car.save
       redirect_to car_path(@car), notice: 'You are successful'

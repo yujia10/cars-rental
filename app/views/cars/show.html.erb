@@ -1,4 +1,6 @@
 
+<%= @car.id %>
+
 <% if user_signed_in?  %>
-  <%= button_to "Book now", cars_path, class: "main-button" %>
+  <%= link_to "Book now", new_car_booking_path(@car), class: "main-button" %>
 <% end  %>
