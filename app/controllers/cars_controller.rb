@@ -1,19 +1,22 @@
 class CarsController < ApplicationController
+  before_action :find_car, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_authorized, only: [:my_cars]
+  after_action :verify_policy_scoped, only: [:index, :my_cars]
 
   def index
-    @cars = Car.all
-    @cars = policy_scope(Car).order(created_at: :desc)
+    if current_user.nil?
+      @cars = policy_scope(Car)
+    else
+      @cars = policy_scope(Car).where.not(user: current_user)
+    end
   end
 
   def show
-    @car = Car.find(params[:id])
-    authorize @car
   end
 
   def new
     @car = Car.new
-    authorize @car
   end
 
   def create
@@ -27,20 +30,35 @@ class CarsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @car.update(list_params)
+    if @car.update(list_params)
+      redirect_to my_cars_cars_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
-    @car = Car.find(params[:id])
-    authorize @car
     @car.destroy
-    redirect_to cars_path
+    redirect_to my_cars_cars_path
   end
 
   def my_cars
-    @cars = current_user.cars
-    authorize @cars
+    @cars = policy_scope(Car).where(user: current_user)
   end
 
 
   private
+
+  def find_car
+    @car = Car.find(params[:id])
+    authorize @car
+  end
+
 
   def list_params
     params.require(:car).permit(:make, :model, :price_day)

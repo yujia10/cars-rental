@@ -1,3 +1,15 @@
+<div class="container">
+  <h1>Browse My cars</h1>
+  <p>You are only one step away to rent a car</p>
+
+  <div>
+    <% @cars.each do |car| %>
+      <%= render 'car', car: car %>
+    <% end %>
+  </div>
+
+  <%# link_to('Edit', edit_car_path(car)) if policy(car).update? %>
+</div>
 <h1>My Cars</h1>
   <%= link_to "My cars booking", car_bookings_bookings_path, class: "main-button" %>
 <p></p>

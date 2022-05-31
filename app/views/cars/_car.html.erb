@@ -1,0 +1,6 @@
+<div class="car-card">
+  <%= link_to "#{car.make}, #{car.model}", car_path(car) %>
+  <p>$<%= car.price_day %></p>
+  <%= link_to('Edit', edit_car_path(car)) if policy(car).update? %>
+  <%= link_to('Delete', car_path(car), method: :delete) if policy(car).destroy? %>
+</div>
