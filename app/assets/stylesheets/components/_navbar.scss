@@ -1,7 +1,9 @@
 .navbar-cars {
   justify-content: space-between;
   background: #293462;
-  color: #F5EFEF
+  color: #F5EFEF;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .navbar-cars .navbar-collapse {
@@ -11,9 +13,8 @@
     margin: 0 8px;
   }
 }
-
 .navbar-cars .navbar-brand img {
-  width: 40px;
+  width: 120px;
 }
 .main-button {
   background-color: #F55353;

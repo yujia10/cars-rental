@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: Open Sans;
+  background-color: #F5EFEF;
 }
 
 h1, h2, h3, h4 {
@@ -13,39 +14,64 @@ a {
 }
 
 /* banner */
-.banner {
-  background-image: url("../../images/background.png");
-  background-size: cover;
-  background-position: center;
-  padding: 200px 0;
-}
-
 .banner-container {
-  width: 900px;
+  width: 1050px;
   margin: auto;
   color: white;
 }
-
-.banner p {
-  color: rgb(146, 143, 143);
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  h1 {
+  margin: 0;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  }
+  p {
+  color: #F5EFEF;
   opacity: 0.7;
   font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding: 8px 3px;
+  }
+}
+.cta-button {
+  background-color: #F55353;
+  color: #F5EFEF;
+  font-size: 16px;
+  border: none;
+  padding: 10px 15px;
+  margin: 4px 10px 0;
+  border-radius: 5px;
+  &:hover {
+    background-color: #ed7373;
+    color: #F5EFEF;
+  }
 }
 
-.btn-large {
-  display: inline-block;
-  color: white;
-  background-color: #1EDD88;
-  padding: 16px 35px;
-  border-radius: 40px;
-}
 
 
 /* card */
 .body-container {
-  width: 900px;
+  width: 1050px;
   margin: auto;
-  color: black;
+  color: #293462;
+  padding: 80px 0;
+  .line {
+    height:0;
+    width: 100px;
+    border: 1px solid #293462;
+    opacity: 0.3;
+  }
+  h2 {
+    padding: 40px 0;
+    font-style: italic;
+    font-weight: bold;;
+  }
 }
 .cards {
   display: flex;
@@ -56,13 +82,13 @@ a {
   box-shadow: 10px 10px 8px #888888;
   text-align: center;
   padding: 20px;
-  border: 1px solid rgb(230 230 230);
+  border: 1px solid white;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgb(230 230 230);
-}
-.card-white img {
-  height: 100px;
-}
-.card-white p{
-  color: rgb(146, 143, 143);
+  box-shadow: 0 0 5px rgb(186, 165, 165);
+  img {
+    height: 100px;
+  }
+  p{
+    color: rgb(146, 143, 143);
+  }
 }
