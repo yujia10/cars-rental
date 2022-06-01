@@ -1,8 +1,11 @@
 
-<%= @car.model %>
-<%= @car.make %>
-<%= cl_image_tag(@car.photo.key, width: 300) if @car.photo.attached? %>
+<div class="container car-container" style="height:900px; text-align: center;">
 
-<% if user_signed_in?  %>
-  <%= link_to "Book now", new_car_booking_path(@car), class: "main-button" %>
-<% end  %>
+  <h2> Car Make: <%= @car.make %></h2>
+  <h2> Car Model: <%= @car.model %></h2>
+  <%= cl_image_tag(@car.photo.key, width: 300) if @car.photo.attached? %>
+
+  <% if user_signed_in?  %>
+    <%= link_to "Book now", new_car_booking_path(@car), class: "main-button" %>
+  <% end  %>
+</div>
