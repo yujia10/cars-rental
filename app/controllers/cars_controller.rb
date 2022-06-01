@@ -25,7 +25,7 @@ class CarsController < ApplicationController
     authorize @car
     @car.user = current_user
     if @car.save
-      redirect_to car_path(@car), notice: 'You are successful'
+      redirect_to my_cars_cars_path, notice: 'You are successful'
     else
       render :new
     end
