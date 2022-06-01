@@ -3,11 +3,12 @@
 
   <ul class="card">
     <% @bookings.each do |booking| %>
+      <img src= "https://www.motortrend.com/uploads/sites/5/2021/02/2022-Mitsubishi-Outlander-5.jpg?fit=around%7C875:492.1875" alt= "Mitsubishi Outlander" class= "car_pics">
       <li> *********************************** </li>
+      <li>Booked car:<%= " #{booking.car.make} #{booking.car.model}" %> </li>
       <li>Start Date: <%= booking.start_date %> </li>
       <li>End Date: <%= booking.end_date %> </li>
       <li>Total Price: <%= booking.total_price %> </li>
-      <li>Booked car:<%= booking.car.make %> </li>
       <li> *********************************** </li>
     <% end %>
   </ul>

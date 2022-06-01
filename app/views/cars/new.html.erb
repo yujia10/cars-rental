@@ -1,16 +1,11 @@
-<div class="container">
-  <h1>Add My Cars</h1>
-  <p>Add a new car for rent</p>
 
-  <div>
-    <%= simple_form_for @car do |f| %>
-  <%= f.input :make %>
+<h1>Create a car</h1>
+<%= simple_form_for @car do |f| %>
   <%= f.input :model %>
+  <%= f.input :make %>
   <%= f.input :price_day %>
   <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
-  </div>
 
-  <%# link_to('Edit', edit_car_path(car)) if policy(car).update? %>
-</div>

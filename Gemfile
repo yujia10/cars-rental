@@ -72,9 +72,9 @@ gem 'pundit'
 # gem to add dates when creating booking
 gem 'flatpickr'
 
-
 gem 'cloudinary', '~> 1.16.0'
 
 gem 'stimulus-rails'
 
 gem "geocoder"
+
