@@ -1,7 +1,8 @@
 
 <div class="card-product">
-  <div class="card-product-infos">
-    <div class="car-card">
+  <div class="card-product-infos d-flex justify-content-between">
+    <%= cl_image_tag(car.photo.key, width: 300) if car.photo.attached? %>
+    <div class="car-card mx-3">
       <%= link_to "#{car.make}, #{car.model}", car_path(car), class: "link-dark" %>
       <p>$<%= car.price_day %></p>
       <%= link_to('Edit', edit_car_path(car), class:'btn btn-info btn-sm') if policy(car).update? %>
