@@ -1,0 +1,8 @@
+<h1>Create a car</h1>
+<%= simple_form_for @car do |f| %>
+  <%= f.input :model %>
+  <%= f.input :make %>
+  <%= f.input :price_day %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
