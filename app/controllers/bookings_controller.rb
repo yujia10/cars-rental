@@ -13,7 +13,9 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking = Booking.new(list_params)
     authorize @booking
-    if @booking.start_date <  @booking.end_date
+    booking_days = (@booking.end_date - @booking.start_date).to_i
+    if booking_days.positive?
+      @booking.total_price =  @car.price_day * booking_days
       @booking.car =  @car
       @booking.user = current_user
       if @booking.save
@@ -29,23 +31,15 @@ class BookingsController < ApplicationController
   def car_bookings
      @bookings = policy_scope(Booking).where(car: current_user.cars)
   end
+
   def my_bookings
      @bookings = policy_scope(Booking).where(user: current_user)
   end
-
-# Yaron code
-#     @bookings = current_user.car_bookings
-#     authorize @bookings
-#   end
-
-#   def my_bookings
-#     @booking = current_user.my_bookings
-#     authorize @booking
-
 
   private
 
   def list_params
     params.require(:booking).permit(:start_date, :end_date, :car_id)
   end
+
 end
