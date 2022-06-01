@@ -6,4 +6,7 @@ class Car < ApplicationRecord
   validates :make, presence: true
   validates :model, presence: true
   validates :price_day, numericality: { only_integer: true }
+
+
+
 end

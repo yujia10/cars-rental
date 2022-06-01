@@ -13,35 +13,22 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking = Booking.new(list_params)
     authorize @booking
-    if @booking.start_date <  @booking.end_date
-      @booking.car =  @car
-      @booking.user = current_user
-      if @booking.save
-        redirect_to my_bookings_bookings_path, notice: 'You are successful'
-      else
-        render :new
-      end
+    @booking.car =  @car
+    @booking.user = current_user
+    if @booking.save
+      redirect_to my_bookings_bookings_path, notice: 'You are successful'
     else
       render :new
     end
   end
 
   def car_bookings
-     @bookings = policy_scope(Booking).where(car: current_user.cars)
+    @bookings = policy_scope(Booking).where(car: current_user.cars)
   end
+
   def my_bookings
-     @bookings = policy_scope(Booking).where(user: current_user)
+    @bookings = policy_scope(Booking).where(user: current_user)
   end
-
-# Yaron code
-#     @bookings = current_user.car_bookings
-#     authorize @bookings
-#   end
-
-#   def my_bookings
-#     @booking = current_user.my_bookings
-#     authorize @booking
-
 
   private
 
