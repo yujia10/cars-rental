@@ -10,6 +10,12 @@ class CarsController < ApplicationController
     else
       @cars = policy_scope(Car).where.not(user: current_user)
     end
+    @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude
+      }
+    end
   end
 
   def show
