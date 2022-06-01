@@ -24,10 +24,12 @@ User.destroy_all
 
 yaron2 = User.create!(email: "yaron.kr@test.com", password: "yaron123")
 yujia = User.create!(email: "yujia@test.com", password: "yujia123")
-julienC = User.create!(email: "julienC@test.com", password: "julienC")
-julienV = User.create!(email: "julienV@test.com", password: "julienV")
+# julienC = User.create!(email: "julienC@test.com", password: "julienC")
+# julienV = User.create!(email: "julienV@test.com", password: "julienV")
 
-car3 = Car.new(make: "Mitsubishi", model: "2022", price_day: 175, url: "https://cdn.vroomvroomvroom.com.au/images/vroomvroomvroom-com-au/cms/wagon.jpg")
+
+car3 = Car.new(make: "Mitsubishi", model: "2022", price_day: 175, address: "16 Villa Gaudelet, Paris", url: "https://cdn.vroomvroomvroom.com.au/images/vroomvroomvroom-com-au/cms/wagon.jpg")
+
 car3.user = yaron2
 car3.save!
 

@@ -73,5 +73,8 @@ gem 'pundit'
 gem 'flatpickr'
 
 gem 'cloudinary', '~> 1.16.0'
-gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'stimulus-rails'
+
+gem "geocoder"
 
