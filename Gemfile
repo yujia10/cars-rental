@@ -71,3 +71,5 @@ gem 'pundit'
 
 # gem to add dates when creating booking
 gem 'flatpickr'
+
+gem 'stimulus-rails'
