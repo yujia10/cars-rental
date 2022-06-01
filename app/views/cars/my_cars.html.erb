@@ -1,13 +1,15 @@
 
-<div class="container " style="height:900px;">
-  <h1>Browse My cars</h1>
+<div class="container">
+  <h1>Browse Our Cars</h1>
   <p>You are only one step away to rent a car</p>
 
-  <div>
-    <% @cars.each do |car| %>
-      <%= render 'car', car: car %>
-    <% end %>
-  </div>
-  <%= link_to('Add a new car', new_car_path, class: "main-button") if current_user %>
-  <%= link_to "My cars booking", car_bookings_bookings_path, class: "main-button" %>
+  <% @cars.each do |car| %>
+        <%= render 'car', car: car %>
+  <% end %>
 </div>
+<div class="container d-flex justify-content-center">
+  <%= link_to('Add New Car', new_car_path, class: "add-new-btn") if current_user %>
+  <%= link_to "My Cars Booking", car_bookings_bookings_path, class: "my-car-booking-btn" %>
+</div>
+  
+  

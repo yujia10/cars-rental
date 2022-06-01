@@ -1,7 +1,12 @@
-<div class="car-card">
-  <%= link_to "#{car.make}, #{car.model}", car_path(car) %>
-  <p>$<%= car.price_day %></p>
-  <p><%= car.address %></p>
-  <%= link_to('Edit', edit_car_path(car)) if policy(car).update? %>
-  <%= link_to('Delete', car_path(car), method: :delete) if policy(car).destroy? %>
+
+<div class="card-product">
+  <div class="card-product-infos">
+    <div class="car-card">
+      <%= link_to "#{car.make}, #{car.model}", car_path(car), class: "link-dark" %>
+      <p>$<%= car.price_day %></p>
+      <%= link_to('Edit', edit_car_path(car), class:'link-primary') if policy(car).update? %>
+      <%= link_to('Delete', car_path(car), method: :delete, class:'link-danger') if policy(car).destroy? %>
+      <%= link_to("Book A Car", new_car_booking_path(car), class: "book-car-btn") unless car.user = current_user%>
+    </div>
+  </div>
 </div>
