@@ -54,7 +54,6 @@ a {
 }
 
 
-
 /* card */
 .body-container {
   width: 1050px;
@@ -86,8 +85,9 @@ a {
   border: 1px solid white;
   border-radius: 3px;
   box-shadow: 0 0 5px rgb(186, 165, 165);
-  img {
-    height: 100px;
+  .image-home {
+    height: 150px;
+    margin-bottom: 20px;
   }
   p{
     color: rgb(146, 143, 143);
