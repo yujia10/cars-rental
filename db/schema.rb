@@ -12,8 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_06_01_054736) do
 
-#ActiveRecord::Schema.define(version: 2022_06_01_022818) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_054736) do
   create_table "bookings", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.integer "status", default: 0, null: false
+    t.boolean "status", default: false, null: false
     t.integer "total_price"
     t.bigint "user_id", null: false
     t.bigint "car_id", null: false
