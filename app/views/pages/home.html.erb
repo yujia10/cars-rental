@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(<%= image_url('banner-bg.jpg') %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(<%= cl_image_path "banner-bg_vtbyx8.jpg" %>);">
   <div class="banner-container">
     <h1>Go to See the Places You Love</h1>
     <p>With 1000s of vehicles to choose from, get a great rate on your car rental</p>
@@ -11,17 +11,17 @@
     <h2>Your Journey Starts Here...</h2>
     <div class="cards">
       <div class="card-white">
-        <img src="images/apply.svg" alt="">
+        <%= cl_image_tag "snappy-process_zckdtb.jpg", class: "image-home" %>
         <h3>Snappy Process</h3>
         <p>Booking process can be completed in minutes.</p>
       </div>
       <div class="card-white">
-        <img src="images/learn.svg" alt="">
+        <%= cl_image_tag "good-price_zh6trp.jpg", class: "image-home" %>
         <h3>Affordable Prices</h3>
         <p>We don't want you to worry about high rental fees.</p>
       </div>
       <div class="card-white">
-        <img src="images/product.svg" alt="">
+         <%= cl_image_tag "people-first_el2in5.jpg", class: "image-home" %>
         <h3>People First</h3>
         <p>We offer the best service.</p>
       </div>
