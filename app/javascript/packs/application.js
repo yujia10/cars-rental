@@ -14,3 +14,11 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+document.addEventListener('DOMContentLoaded', function() {
+  flatpickr('.your-selector');
+})
+
+flatpickr('#calendar-tomorrow', {
+  "minDate": new Date().fp_incr(1)
+});
