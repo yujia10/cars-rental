@@ -13,27 +13,21 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking = Booking.new(list_params)
     authorize @booking
-    booking_days = (@booking.end_date - @booking.start_date).to_i
-    if booking_days.positive?
-      @booking.total_price =  @car.price_day * booking_days
-      @booking.car =  @car
-      @booking.user = current_user
-      if @booking.save
-        redirect_to my_bookings_bookings_path, notice: 'You are successful'
-      else
-        render :new
-      end
+    @booking.car =  @car
+    @booking.user = current_user
+    if @booking.save
+      redirect_to my_bookings_bookings_path, notice: 'You are successful'
     else
       render :new
     end
   end
 
   def car_bookings
-     @bookings = policy_scope(Booking).where(car: current_user.cars)
+    @bookings = policy_scope(Booking).where(car: current_user.cars)
   end
 
   def my_bookings
-     @bookings = policy_scope(Booking).where(user: current_user)
+    @bookings = policy_scope(Booking).where(user: current_user)
   end
 
   private
@@ -41,5 +35,4 @@ class BookingsController < ApplicationController
   def list_params
     params.require(:booking).permit(:start_date, :end_date, :car_id)
   end
-
 end
