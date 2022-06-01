@@ -1,9 +1,29 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(<%= image_url('banner-bg.jpg') %>);">
+  <div class="banner-container">
     <h1>Go to See the Places You Love</h1>
-    <p>With 1000s of vehicles to choose from, get a great rate on your Car Rental</p>
-
+    <p>With 1000s of vehicles to choose from, get a great rate on your car rental</p>
+    <%= link_to "VIEW CARS", cars_path, class: "cta-button" %>
   </div>
 </div>
-<div class="content"></div>
+
+<div class="body-container">
+    <div class="line"></div>
+    <h2>Your Journey Starts Here...</h2>
+    <div class="cards">
+      <div class="card-white">
+        <img src="images/apply.svg" alt="">
+        <h3>Snappy Process</h3>
+        <p>Booking process can be completed in minutes.</p>
+      </div>
+      <div class="card-white">
+        <img src="images/learn.svg" alt="">
+        <h3>Affordable Prices</h3>
+        <p>We don't want you to worry about high rental fees.</p>
+      </div>
+      <div class="card-white">
+        <img src="images/product.svg" alt="">
+        <h3>People First</h3>
+        <p>We offer the best service.</p>
+      </div>
+    </div>
+  </div>

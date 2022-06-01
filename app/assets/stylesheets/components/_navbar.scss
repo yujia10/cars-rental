@@ -1,7 +1,9 @@
 .navbar-cars {
   justify-content: space-between;
-  background: #293462;
-  color: #F5EFEF
+  background-color: #F5EFEF;
+  color: #293462;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .navbar-cars .navbar-collapse {
@@ -11,26 +13,25 @@
     margin: 0 8px;
   }
 }
-
 .navbar-cars .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
 .main-button {
   background-color: #F55353;
   color: #F5EFEF;
   font-size: 18px;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 12px;
   margin: 4px 10px 0;
   border-radius: 5px;
   &:hover {
     background-color: #ed7373;
   }
 }
-.text-white {
-  color: #F5EFEF;
+.text-blue {
+  color: #293462;
   font-size: 18px;
   &:hover {
-    border-bottom: 2px solid #F5EFEF;
+    border-bottom: 2px solid #293462;
   }
 }
