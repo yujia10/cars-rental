@@ -1,10 +1,8 @@
 <div class="container">
   <h1>Browse Our Cars</h1>
-  <p></p>
+  <p>You are only one step away to rent a car</p>
 
-  <div>
-    <% @cars.each do |car| %>
-      <%= render 'car', car: car %>
-    <% end %>
-  </div>
+  <% @cars.each do |car| %>
+    <%= render 'car', car: car %>
+  <% end %>
 </div>
