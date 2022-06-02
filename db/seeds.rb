@@ -20,7 +20,6 @@ s_date2 = Date.new(2022,6,1)
 e_date2 = Date.new(2022,6,2)
 
 #   Character.create(name: 'Luke', movie: movies.first)
-
 Booking.destroy_all
 User.destroy_all
 
@@ -28,7 +27,6 @@ yaron2 = User.create!(email: "yaron.kr@test.com", password: "yaron123")
 yujia = User.create!(email: "yujia@test.com", password: "yujia123")
 julienC = User.create!(email: "julienC@test.com", password: "julienC")
 julienV = User.create!(email: "julienV@test.com", password: "julienV")
-
 
 
 # EXAMPLPE HOW TO CREATE 1 CAR - COPY IMAGES AND DETAILS FROM THIS WEBSITE: https://www.drivemycar.com.au/cars/toyota-yaris-ashburton/15631
