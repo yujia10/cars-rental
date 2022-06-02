@@ -1,7 +1,13 @@
+
 <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+  <div class="card-product-infos d-flex justify-content-between">
+    <%= cl_image_tag(car.photo.key, width: 300) if car.photo.attached? %>
+    <div class="car-card mx-3">
+      <%= link_to "#{car.make}, #{car.model}", car_path(car), class: "link-dark" %>
+      <p>$<%= car.price_day %></p>
+      <%= link_to('Edit', edit_car_path(car), class:'link-primary') if policy(car).update? %>
+      <%= link_to('Delete', car_path(car), method: :delete, class:'link-danger') if policy(car).destroy? %>
+      <%= link_to("Book A Car", new_car_booking_path(car), class: "book-car-btn") unless car.user = current_user%>
+    </div>
   </div>
 </div>
