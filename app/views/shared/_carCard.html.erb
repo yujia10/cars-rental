@@ -3,13 +3,15 @@
   <div class="container py-3 mb-3 border-bottom">
     <div class="row">
       <div class="col-md-6">
-        <%= cl_image_tag(car.photo.key, width: 300) if car.photo.attached? %>
+        <%= link_to car_path(car), class: "card-product bg-white" do %>
+          <%= cl_image_tag(car.photo.key, width: 300) if car.photo.attached? %>
+        <% end %>
       </div>
       <div class="col-md-3">
       <h3><%="#{car.make} #{car.year}"%></h3>
       <h4><%=car.model%></h4>
       <div class="d-flex flex-row">
-        <i class="fab fa-brands fa-linkedin fa-100x" ></i>
+        <%= image_tag "location-dot-solid.svg", class:"location-pin" %>
         <h5><%=car.address%></h5>
       </div>
       <h6 class="availibale"> Availibale Now</h6>
@@ -25,7 +27,7 @@
         <%# <%= link_to('Edit', edit_car_path(car), class:'link-primary') if policy(car).update? %>
         <%#= link_to('Delete', car_path(car), method: :delete, class:'link-danger') if policy(car).destroy? %>
         <%#= link_to("Book A Car", new_car_booking_path(car), class: "book-car-btn") unless car.user = current_user%>
-        <%= link_to "Book Now", car_path(car), class: "btn book-now" %>
+        <%= link_to "Book Now", car_path(car), class: "btn book-now " %>
       </div>
     </div>
   </div>

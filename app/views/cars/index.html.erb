@@ -3,13 +3,16 @@
   <h1>Browse Our Cars</h1>
   <p>You are only one step away to rent a car</p>
 
-
-  <div class="map" style="width: 50%; height: 300px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-  <% @cars.each do |car| %>
-    <%= render 'shared/carCard', car: car %>
-  <% end %>
+  <div class="d-flex justify-content-between ">
+    <div>
+      <% @cars.each do |car| %>
+        <%= render 'shared/carCard', car: car %>
+      <% end %>
+    </div>
+     <div class="map" style="width: 50%; height: 300px; margin-left: 40px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>

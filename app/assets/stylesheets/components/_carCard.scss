@@ -9,6 +9,7 @@
   width: 800px;
   height: 248px;
 
+
   h3 {
     font-size: 18px;
   }
@@ -33,7 +34,16 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
   }
+  .location-pin {
+    height: 12px;
+    width: 16px;
+    object-fit: initial;
+  }
 
+}
+
+.card-product:hover {
+  background-color: rgb(136, 136, 136);
 }
 
 .book-now {
