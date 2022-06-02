@@ -6,14 +6,14 @@
 .mapboxgl-popup-content {
   overflow: hidden;
   font-family: "Open Sans", sans-serif;
-  height: 120px;
+  height: 140px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   color: #293462;
-  padding:0;
-
+  padding: 5px;
+  font-size: 12px;
   .mark-price {
     color: #F55353;
   }
