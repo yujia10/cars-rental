@@ -11,6 +11,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 require 'date'
+require "open-uri"
 
 s_date1 = Date.new(2022,5,5)
 e_date1 = Date.new(2022,5,10)
@@ -24,26 +25,24 @@ User.destroy_all
 
 yaron2 = User.create!(email: "yaron.kr@test.com", password: "yaron123")
 yujia = User.create!(email: "yujia@test.com", password: "yujia123")
-# julienC = User.create!(email: "julienC@test.com", password: "julienC")
-# julienV = User.create!(email: "julienV@test.com", password: "julienV")
-
-car3 = Car.new(make: "Mitsubishi", model: "2022", price_day: 175, address: "16 Villa Gaudelet, Paris")
-
-car3.user = yaron2
-car3.save!
-
-car2 = Car.new(make: "Golf", model: "2020", price_day: 75, address: "37 Thyer Rd, Penfield Gardens")
-car2.user = yujia
-car2.save!
+julienC = User.create!(email: "julienC@test.com", password: "julienC")
+julienV = User.create!(email: "julienV@test.com", password: "julienV")
 
 
+# EXAMPLPE HOW TO CREATE 1 CAR - COPY IMAGES AND DETAILS FROM THIS WEBSITE: https://www.drivemycar.com.au/cars/toyota-yaris-ashburton/15631
+file = URI.open('https://images.carly.co/15631/15631-front-1-normal.jpg')
 
-bookin1 = Booking.new(start_date: s_date1, end_date: e_date1, total_price: 250)
-bookin1.car = car2
-bookin1.user = yaron2
-bookin1.save!
+description = "My Yaris is great for comfort, speed and economical for driving. It has taken me on very long drives, using only $50 of petrol. To fill the tank, it costs around $40-46. In addition, there is bluetooth for GPS, phone calls and great music. The sound system is epic. In addition, the back seat is comfortable and spacious. The front is as well. Air conditioning works perfectly so does the heater."
 
-bookin2 = Booking.new(start_date: s_date2, end_date: e_date2, total_price: 150)
-bookin2.car = car3
-bookin2.user = yujia
-bookin2.save!
+car1 = Car.new(make: "Toyota Yaris ", model: "Yaris YR", year: 2014,description: description, price_day: 175, address: "16 Villa Gaudelet, Paris")
+
+car1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+car1.user = yujia
+car1.save!
+# ***************
+
+# EXAMPLPE HOW TO CREATE BOOKING
+# bookin2 = Booking.new(start_date: s_date2, end_date: e_date2)
+# bookin2.car = car3
+# bookin2.user = yujia
+# bookin2.save!

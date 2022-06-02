@@ -3,6 +3,24 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
+  overflow: hidden;
   font-family: "Open Sans", sans-serif;
+  height: 120px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  color: #293462;
+  padding:0;
+  .mark-price {
+    color: #F55353;
+  }
+}
+
+.mapboxgl-popup-close-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 18px;
+  color: #293462;
 }

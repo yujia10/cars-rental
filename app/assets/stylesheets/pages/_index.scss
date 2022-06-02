@@ -1,2 +1,18 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "components/content-wrapper";
+
+body {
+  background-color: white;
+  p {
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+  }
+}
+
+.index-container {
+  // border: 2px solid #000000;
+  // border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
