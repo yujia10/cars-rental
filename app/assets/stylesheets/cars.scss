@@ -34,34 +34,25 @@
 
 .add-new-btn {
   border-radius: 5px;
-  border: 1px solid #0D6EFD;
-  background: white;
-  color:black;
+  background: #F55353;
+  color:white;
   padding: 5px;
-  margin: 5px;
-
-  &:hover {
-    border-radius: 5px;
-    border: 1px solid #ed7373;
-    background: white;
-    color:black;
-  }
+  margin: 20px;
 }
 
 .my-car-booking-btn {
   border-radius: 5px;
-  border: 1px solid #0D6EFD;
-  background: white;
-  color:black;
+  background: #293462;
+  color:white;
   padding: 5px;
-  margin: 5px;
+  margin: 20px;
 
-  &:hover {
-    border-radius: 5px;
-    border: 1px solid #ed7373;
-    background: white;
-    color:black;
-  }
+  // &:hover {
+  //   border-radius: 5px;
+  //   border: 1px solid #ed7373;
+  //   background: white;
+  //   color:black;
+  // }
 }
 
 .car-container {
