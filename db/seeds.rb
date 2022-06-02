@@ -146,6 +146,7 @@ bookin6.save!
 
 # **********
 
+
 bookin7 = Booking.new(start_date: s_date7, end_date: e_date7)
 bookin7.car = car8
 bookin7.user = julienC
