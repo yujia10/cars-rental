@@ -11,15 +11,30 @@
   }
 }
 .button-secondary {
-  background-color: #F5EFEF;
+  background-color: white;
   color: #F55353;
-  font-size: 16px;
+  font-size: 14px;
   border: 2px solid #F55353;
-  padding: 5px 12px;
+  padding: 4px 10px;
   margin: 4px 10px 0;
   border-radius: 5px;
   &:hover {
     color: #ed7373;
     border: 2px solid #ed7373;
+    background-color: #F5EFEF;
+  }
+}
+.button-blue {
+  background-color: white;
+  color: #293462;
+  font-size: 14px;
+  border: 2px solid #293462;
+  padding: 4px 10px;
+  margin: 4px 10px 0;
+  border-radius: 5px;
+  &:hover {
+    color: #505d94;
+    border: 2px solid #505d94;
+    background-color: #F5EFEF;
   }
 }
