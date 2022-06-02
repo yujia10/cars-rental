@@ -86,7 +86,7 @@ file = URI.open('https://static.drivemycar.com.au/UserImages/66714-pending-2021-
 
 description = "This Holden Captiva is a considerably big car to accommodate seven people. Captiva is one of the Australia's favourite family vehicle. From sun roof to electric leather seats, it has all the options of a high end luxury car. All wheel drive - perfect for a long drive with Family and friends. Please note the CD player display screen is not working."
 
-car5 = Car.new(make: "Holden", model: "Captiva", year: 2010,description: description, price_day: 27.75, address: "256 ferntree gully rd, notting hill")
+car5 = Car.new(make: "Holden", model: "Captiva", year: 2010,description: description, price_day: 27, address: "256 ferntree gully rd, notting hill")
 
 car5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 car5.user = julienV

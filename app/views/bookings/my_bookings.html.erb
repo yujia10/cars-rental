@@ -1,9 +1,7 @@
 <div class="container">
   <h1>My bookings</h1>
-
   <ul class="card">
     <% @bookings.each do |booking| %>
-      <img src= "https://www.motortrend.com/uploads/sites/5/2021/02/2022-Mitsubishi-Outlander-5.jpg?fit=around%7C875:492.1875" alt= "Mitsubishi Outlander" class= "car_pics">
       <li> *********************************** </li>
       <li>Booked car:<%= " #{booking.car.make} #{booking.car.model}" %> </li>
       <li>Start Date: <%= booking.start_date %> </li>

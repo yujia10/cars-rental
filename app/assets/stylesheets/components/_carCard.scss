@@ -8,6 +8,7 @@
   background: white;
   width: 800px;
   height: 248px;
+  border-bottom: 1px solid rgb(210, 210, 210);
 
 
   h3 {
@@ -62,7 +63,8 @@
 
 .card-product img {
 
-  object-fit: cover;
+  height: 225px;
+  object-fit: unset;
 }
 
 .card-product h2 {
