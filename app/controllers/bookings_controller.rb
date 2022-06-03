@@ -12,6 +12,8 @@ class BookingsController < ApplicationController
   def create
     @car = Car.find(params[:car_id])
     @booking = Booking.new(list_params)
+    format_dates if list_params[:date]
+    calculate_total_price if list_params[:date]
     authorize @booking
     @booking.car =  @car
     @booking.user = current_user
@@ -32,7 +34,17 @@ class BookingsController < ApplicationController
 
   private
 
+  def format_dates
+    @booking.start_date = Date.parse(list_params[:date][0..9])
+    @booking.end_date = Date.parse(list_params[:date][-10..-1])
+  end
+
+  def calculate_total_price
+    days = (@booking.end_date - @booking.start_date).to_i
+    @booking.total_price = @car.price_day * days
+  end
+
   def list_params
-    params.require(:booking).permit(:start_date, :end_date, :car_id)
+    params.require(:booking).permit(:car_id, :date, :start_date, :end_date)
   end
 end

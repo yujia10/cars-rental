@@ -1,11 +1,13 @@
-
-<h1>Create a car</h1>
-<%= simple_form_for @car do |f| %>
-  <%= f.input :model %>
-  <%= f.input :make %>
-  <%= f.input :price_day %>
-  <%= f.input :address %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-
+<div class="container booking-container my-5" style="width: 35rem;">
+  <h1>Create a car</h1>
+  <%= simple_form_for @car do |f| %>
+   <%= f.input :make %>
+    <%= f.input :model %>
+    <%= f.input :year %>
+    <%= f.input :description %>
+    <%= f.input :price_day %>
+    <%= f.input :address %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
