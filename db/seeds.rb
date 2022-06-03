@@ -45,10 +45,11 @@ julienV = User.create!(email: "julienV@test.com", password: "julienV")
 
 
 # EXAMPLPE HOW TO CREATE 1 CAR - COPY IMAGES AND DETAILS FROM THIS WEBSITE: https://www.drivemycar.com.au/cars/toyota-yaris-ashburton/15631
-file = URI.open('https://res.cloudinary.com/yaron3010/image/upload/v1654233260/b5c221b3cc61bb09de69895933dc01f0_zshrth.jpg')
 
-description = "it's the Mutts Cutts van. The body is covered with shag carpet"
 
+file = URI.open('https://static.drivemycar.com.au/UserImages/78865-pending-3132-1.jpeg')
+
+description = "My Cruze is perfect for an everyday car. You will love the smooth drive, accompanied with luxury features including heated seating, AUX, GPS, leather interior and more! I will consider bringing the car to you if you are located within 20kms. Enjoy that brand new sports car feel without braking the bank!"
 
 
 car1 = Car.new(make: "Holden", model: "Cruze", year: 2011,description: description, price_day: 25, address: "256 ferntree gully rd, notting hill")
@@ -116,11 +117,9 @@ car7.save!
 
 
 # ********
+file = URI.open('https://res.cloudinary.com/yaron3010/image/upload/v1654233260/b5c221b3cc61bb09de69895933dc01f0_zshrth.jpg')
 
-file = URI.open('https://static.drivemycar.com.au/UserImages/78865-pending-3132-1.jpeg')
-
-description = "My Cruze is perfect for an everyday car. You will love the smooth drive, accompanied with luxury features including heated seating, AUX, GPS, leather interior and more! I will consider bringing the car to you if you are located within 20kms. Enjoy that brand new sports car feel without braking the bank!"
-
+description = "it's the Mutts Cutts van. The body is covered with shag carpet"
 
 car8 = Car.new(make: "Harry's ", model: "Dog van", year: 1970,description: description, price_day: 2, address: "265 Grange Rd, Ormond VIC 3204")
 car8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
