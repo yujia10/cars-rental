@@ -42,7 +42,7 @@ yaron2 = User.create!(email: "yaron.kr@test.com", password: "yaron123")
 yujia = User.create!(email: "yujia@test.com", password: "yujia123")
 julienC = User.create!(email: "julienC@test.com", password: "julienC")
 julienV = User.create!(email: "julienV@test.com", password: "julienV")
-
+testUser = User.create!(email: "testV@test.com", password: "1234567")
 
 # EXAMPLPE HOW TO CREATE 1 CAR - COPY IMAGES AND DETAILS FROM THIS WEBSITE: https://www.drivemycar.com.au/cars/toyota-yaris-ashburton/15631
 
