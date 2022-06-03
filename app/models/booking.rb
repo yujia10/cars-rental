@@ -1,7 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :car
-  validate :end_date_after_start_date
   enum status: {
     pending: 0,
     accepted: 1,
@@ -16,8 +15,6 @@ class Booking < ApplicationRecord
     if end_date <= start_date
       errors.add(:end_date, "must be after the start date")
     end
- end
+   end
 
 end
-
-# date1 = Date.strptime("2022,02,01", "%y,%m,%d")

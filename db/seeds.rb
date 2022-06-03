@@ -45,12 +45,12 @@ julienV = User.create!(email: "julienV@test.com", password: "julienV")
 
 
 # EXAMPLPE HOW TO CREATE 1 CAR - COPY IMAGES AND DETAILS FROM THIS WEBSITE: https://www.drivemycar.com.au/cars/toyota-yaris-ashburton/15631
-file = URI.open('https://images.carly.co/15631/15631-front-1-normal.jpg')
+file = URI.open('https://res.cloudinary.com/yaron3010/image/upload/v1654233260/b5c221b3cc61bb09de69895933dc01f0_zshrth.jpg')
 
-description = "My Yaris is great for comfort, speed and economical for driving. It has taken me on very long drives, using only $50 of petrol. To fill the tank, it costs around $40-46. In addition, there is bluetooth for GPS, phone calls and great music. The sound system is epic. In addition, the back seat is comfortable and spacious. The front is as well. Air conditioning works perfectly so does the heater."
+description = "it's the Mutts Cutts van. The body is covered with shag carpet"
 
 
-car1 = Car.new(make: "Toyota Yaris ", model: "Yaris YR", year: 2014,description: description, price_day: 175, address: "265 Grange Rd, Ormond VIC 3204")
+car1 = Car.new(make: "Harry's ", model: "Dog van", year: 1970,description: description, price_day: 2, address: "265 Grange Rd, Ormond VIC 3204")
 
 
 car1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
