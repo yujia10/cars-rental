@@ -5,18 +5,13 @@
     <%= simple_form_for [@car, @booking] do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :start_date, as: :date,start_year: Date.today.year, discard_day: false, order: [:day,:month, :year]  %>
-    <%= f.input :end_date, as: :date,start_year: Date.today.year, discard_day: false, order: [:day,:month, :year] %>
-    <%= f.button :submit, class: "btn-primary" %>
     <%= f.text_field :date,
     data: {
       controller: "flatpickr",
-      flatpickr_date_format: "Y-m-d",
-
+      flatpickr_date_format: ("Y-m-d"),
       flatpickr_min_date: Time.zone.now
-
     } %>
+    <%= f.button :submit, class: "btn-primary" %>
     <% end %>
-
   </div>
 </div>
