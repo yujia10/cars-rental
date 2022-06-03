@@ -1,8 +1,11 @@
- <div class="card-product-infos d-flex justify-content-between">
+ <div class="d-flex justify-content-between">
+  <div class="marker-img">
     <%= cl_image_tag(car.photo.key, width: 100) if car.photo.attached? %>
+  </div>
     <div class="car-card mx-3">
-      <h5><%= car.make %> | <%= car.model %></h5>
-      <h6 class="mark-price">$<%= car.price_day %> / day</h6>
+      <h6><%= car.make %></h6>
+      <p><%= car.model %></p>
+      <p class="marker-price">$<%= car.price_day %> / day</p>
       <p><%= car.address %></p>
     </div>
   </div>

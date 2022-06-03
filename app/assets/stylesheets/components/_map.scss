@@ -1,21 +1,28 @@
 .mapboxgl-popup {
-  max-width: 100px;
-
+  max-width: 120px;
 }
 
 .mapboxgl-popup-content {
   overflow: hidden;
   font-family: "Open Sans", sans-serif;
-  height: 120px;
+  height: 140px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   color: #293462;
-  padding:0;
-
-  .mark-price {
+  font-size: 10px;
+  line-height: 1.5;
+  .marker-img{
+    object-fit: cover;
+    width: 100px;
+  }
+  .marker-price {
     color: #F55353;
+    font-size: 12px;
+  }
+  h6 {
+    margin-bottom: 2px;
   }
 }
 
