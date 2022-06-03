@@ -1,11 +1,105 @@
 
-<div class="container car-container" style="height:900px; text-align: center;">
+<%# <div class="container car-container" style="height:900px; text-align: center;">
 
   <h2> Car Make: <%= @car.make %></h2>
-  <h2> Car Model: <%= @car.model %></h2>
-  <%= cl_image_tag(@car.photo.key, width: 300) if @car.photo.attached? %>
+  <%# <h2> Car Model: <%= @car.model %></h2>
+  <%# <%= cl_image_tag(@car.photo.key, width: 300) if @car.photo.attached? %>
 
-  <% if user_signed_in?  %>
-    <%= link_to "Book now", new_car_booking_path(@car), class: "main-button" %>
-  <% end  %>
-</div>
+  <%# <% if user_signed_in?  %>
+    <%# <%= link_to "Book now", new_car_booking_path(@car), class: "main-button" %>
+  <%# <% end  %>
+<%# </div> %>
+
+<div class="container car-container my-3" style="height:900px; text-align: left; color: #293462">
+      <div class="row">
+        <div class="col-md-8" style="width: 700px">
+          <h2> <%= @car.make %> - <%= @car.model %></h2>
+
+          <!-- car image -->
+          <div>
+            <%= cl_image_tag(@car.photo.key, width: 500) if @car.photo.attached? %>
+          </div>
+
+          <div class="car-profile-description" style="border: solid 1px #c6c6c6;
+        width: 618px;
+        padding:15px;
+        margin-top:15px;
+        font-size:12px">
+          <%= @car.description %>
+          </div>
+          <div class="car-profile-info" style="border:solid 1px #c6c6c6;padding: 25px 15px 15px 15px;margin-top:15px;width:618px;overflow:auto; font-size:14px">
+
+                <div class="row no-padding">
+                    <div class="col-md-6 no-padding">
+                        <strong>Status:</strong> <span class="statusUnavail">  <strong>Available from 25/08/22</strong> </span><br />
+                        <strong>Min. Booking: </strong>2 Days <br />
+                        <strong>Style: </strong>Wagon<br />
+                        <strong>Transmission: </strong>Automatic<br />
+
+                    </div>
+                    <div class="col-md-6 no-padding">
+                        <strong>Price Includes: </strong><br />
+                            <span>100 + 100 EXTRA km per day</span><br />
+                            <span>Excess km rate: $0.10 / km</span><br />
+
+
+                        Comprehensive Insurance<br />
+                        Roadside Assistance<br />
+                        Servicing and maintenance<br />
+                    </div>
+                </div>
+
+                <div class="row no-padding" style="margin-top:15px;">
+                    <div class="col-md-6 no-padding">
+                        <strong>Damage Liability Charge: </strong> $2750<a style="margin-left:7px;text-decoration:underline;color:#337ab7;/*cursor:pointer;*/" id="reduce-manage-liability" href="#damage-liability-pop">Reduce this</a><br />
+                        <strong>Min. Driver Age: </strong>21<br />
+
+                        <strong>Comprehensive Insurance: </strong> YES
+
+                    </div>
+                    <div class="col-md-6 no-padding">
+                        <strong>Features: </strong>
+
+
+                        <br />
+
+
+                                <div style="width:180px;">ABS(Antilock Brakes)</div>
+                                <div style="width:180px;">Air Conditioning</div>
+                                <div style="width:180px;">Airbags</div>
+                                <div style="width:180px;">Bluetooth</div>
+                                <div style="width:180px;">GPS (Satellite Navigation)</div>
+                    </div>
+                </div>
+
+            </div>
+
+
+          <!-- /menu -->
+
+
+        </div>
+
+        <div class="col-md-4" style="text-align: left; border: 1px solid #c6c6c6; padding: 25px 15px 15px 15px; margin-top: 15px;; height: 250px;">
+          <!-- checkout -->
+          <div>
+            <b>
+         <span style="position:relative;top:-18px; font-weight:bold;">$</span>
+          <span style="font-size:36px; color: #F55353"><%= @car.price_day %></span>
+        </b>
+        / Day
+            <hr>
+            <p style="font-size: 12px">pick up: </p>
+            <h6><%= @car.address %></h6>
+            <hr>
+            <!-- make this a full length button -->
+            <div style="margin-right: 15px">
+              <% if user_signed_in?  %>
+              <%= link_to "BOOK NOW", new_car_booking_path(@car), class: "btn button-primary w-100" %>
+              <% end %>
+            </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
