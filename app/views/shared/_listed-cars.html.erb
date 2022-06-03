@@ -1,0 +1,36 @@
+
+<div class="card-product bg-white ">
+  <div class="container py-3 mb-12">
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to car_path(car), class: "card-product bg-white" do %>
+          <%= cl_image_tag(car.photo.key, width: 300) if car.photo.attached? %>
+        <% end %>
+      </div>
+      <div class="col-md-3">
+      <h3><%="#{car.make} #{car.year}"%></h3>
+      <h4><%=car.model%></h4>
+      <div class="d-flex flex-row">
+      </div>
+      </div>
+      <div class="col-md-3">
+        <b>
+         <span style="position:relative;top:-18px; font-weight:bold;">$</span>
+          <span style="font-size:36px;"><%= car.price_day %></span>
+        </b>
+        / Day
+        <div class="col-md-6">
+          <div class="d-flex justify-content-between">
+            <%= link_to('Edit', edit_car_path(car), class:'button-secondary') if policy(car).update? %>
+            <%= link_to('Delete', car_path(car), method: :delete, class:'button-secondary') if policy(car).destroy? %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+      <div class="container d-flex justify-content-between">
+        <%= link_to('Add New Car', new_car_path, class: "book-now-form") if current_user %>
+        <%= link_to "My Cars Booking", car_bookings_bookings_path, class: "book-now-form" %>
+      </div>
+  </div>
+</div>
