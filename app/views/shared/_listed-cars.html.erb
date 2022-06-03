@@ -28,9 +28,9 @@
         </div>
       </div>
     </div>
-      <div class="container d-flex justify-content-between">
-        <%= link_to('Add New Car', new_car_path, class: "book-now-form") if current_user %>
-        <%= link_to "My Cars Booking", car_bookings_bookings_path, class: "book-now-form" %>
+      <div class="container d-flex justify-content-between my-3">
+        <%= link_to('Add New Car', new_car_path, class: "btn button-primary w-100") if current_user %>
+        <%= link_to "My Cars Booking", car_bookings_bookings_path, class: "btn button-primary w-100" %>
       </div>
   </div>
 </div>
