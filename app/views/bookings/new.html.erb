@@ -19,19 +19,19 @@
         </div>
         <div class="mb-3 col-12">
           <%= simple_form_for [@car, @booking] do |f| %>
-          <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-          <%= f.text_field :date,
-          data: {
-            controller: "flatpickr",
-            flatpickr_date_format: ("Y-m-d"),
-            flatpickr_min_date: Time.zone.now
-          } %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <%= f.text_field :date,
+            data: {
+              controller: "flatpickr",
+              flatpickr_date_format: ("Y-m-d"),
+              flatpickr_min_date: Time.zone.now
+            } %>
+          <div class="mb-3 col-12">
+            <%= f.button :submit, class: "book-now-form " %>
+          </div>
+         <% end %>
         </div>
-        <div class="mb-3 col-12">
-          <%= f.button :submit, class: "book-now-form " %>
-        </div>
-        <% end %>
       </div>
     </div>
   </div>
