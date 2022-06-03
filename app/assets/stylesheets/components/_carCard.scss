@@ -8,7 +8,11 @@
   background: white;
   width: 800px;
   height: 248px;
-
+  border-bottom: 1px solid rgb(210, 210, 210);
+  border-radius: 10px;
+  &:hover {
+    background-color: #F5EFEF !important ;
+  }
 
   h3 {
     font-size: 18px;
@@ -48,7 +52,7 @@
 
 .book-now {
   background: #d50032;
-  width: 202px;
+  width: 180px;
   height: 35px;
   color: #fff;
   border: none;
@@ -58,10 +62,12 @@
   text-decoration: none;
   font-weight: bold;
   margin-top: 80px;
+
 }
 
 .card-product img {
 
+  height: 225px;
   object-fit: cover;
 }
 
