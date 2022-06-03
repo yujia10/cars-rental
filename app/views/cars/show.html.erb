@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-8" style="width: 700px">
           <h2> <%= @car.make %> - <%= @car.model %></h2>
-
+            <%= link_to "BACK TO CARS", cars_path, class: "btn button-blue" %>
           <!-- car image -->
           <div>
             <%= cl_image_tag(@car.photo.key, width: 500) if @car.photo.attached? %>
@@ -97,8 +97,8 @@
               <% if user_signed_in?  %>
               <%= link_to "BOOK NOW", new_car_booking_path(@car), class: "btn button-primary w-100" %>
               <% end %>
-            </div>
 
+            </div>
             </div>
         </div>
       </div>
