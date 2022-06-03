@@ -1,5 +1,5 @@
   <h1 style="text-align:center; color: #293462;">Car Booking</h1>
-  <div class="container booking-container my-3" style="width: 27rem;">
+  <div class="container booking-container my-3" style="width: 27rem; color: #293462">
     <h5 style="text-align:center; padding-bottom: 5px;">Please confirm Car details before booking</h5>
     <div class="container mx-2">
       <div class="d-flex justify-content-between">
@@ -10,7 +10,7 @@
         <h6> <strong>Model:</strong>  <%= @car.address %></h2>
     </div>
   </div>
-  <div class="container booking-container" style="width: 27rem;">
+  <div class="container booking-container" style="width: 27rem; color: #293462">
     <div class="d-flex justify-content-center">
       <div class="simple-form">
       <div class="row ">
@@ -28,7 +28,7 @@
               flatpickr_min_date: Time.zone.now
             } %>
           <div class="mb-3 col-12">
-            <%= f.button :submit, class: "book-now-form " %>
+            <%= f.button :submit, class: "book-now-form btn button-primary" %>
           </div>
          <% end %>
         </div>
