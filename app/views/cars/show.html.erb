@@ -1,9 +1,11 @@
 
 <div class="container car-container" style="height:900px; text-align: center;">
 
-  <h2> Car Make: <%= @car.make %></h2>
-  <h2> Car Model: <%= @car.model %></h2>
+  <h2> <%= @car.make %> <%= @car.model %> (<%= @car.year %>)</h2>
   <%= cl_image_tag(@car.photo.key, width: 300) if @car.photo.attached? %>
+  <br>
+  <p>This car belongs to: <%= @car.user.email %></p>
+  <p style="padding: 15px; margin: 15px 200px 30px; border: solid 1px; box-sizing: border-box; display: block; text-align: center;"><%= @car.description %></p>
 
   <% if user_signed_in?  %>
     <%= link_to "Book now", new_car_booking_path(@car), class: "main-button" %>
